@@ -5,8 +5,8 @@ export function Quadrant({ quadrant, shapes }) {
     const { setNodeRef } = useDroppable({ id: quadrant.id });
 
     return (
-        <div ref={setNodeRef} className="p-4 border-2 border-blue-600 bg-red-200 h-full">
-            <h2 className="mb-4 font-semibold text-black text-center">{quadrant.title}</h2>
+        <div ref={setNodeRef} className="p-4 border-2 border-gray-200 bg-red-200 h-full">
+            <h2 className="mb-4 text-lg text-black text-center">{quadrant.title}</h2>
             <div className="grid grid-cols-3">
                 {shapes.map((shape) => (
                     <DraggableShape key={shape.id} shape={shape} />
