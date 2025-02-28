@@ -5,7 +5,7 @@ export function SqShape() {
     return (
         <div className="flex justify-center items-center 
         ">
-        <img src={sq_icon} alt="square" className="object-contain w-10/12"/>
+        <img src={sq_icon} alt="square" className="object-contain w-7/12"/>
     </div>
     );
 }
