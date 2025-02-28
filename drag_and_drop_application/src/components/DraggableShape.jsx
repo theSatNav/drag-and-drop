@@ -1,10 +1,25 @@
+import { useDraggable } from "@dnd-kit/core";
 
 
 export function DraggableShape({ shape }) {
-    {/*currently only displaying div*/}
-   return (
-         <div className="p-4 border-2 border-blue-600 bg-red-200 h-full">
-         <h2 className="mb-4 font-semibold text-black text-center">{shape.shape}</h2>
+    const { attributes, listeners, setNodeRef, transform } = useDraggable({
+        id: shape.id,
+        data: { type: "shape" }, 
+    });
+
+    const style = transform
+        ? { transform: `translate(${transform.x}px, ${transform.y}px)` }
+        : undefined;
+
+    return (
+        <div
+            ref={setNodeRef}
+            {...listeners}
+            {...attributes}
+            className="cursor-grab"
+            style={style}
+        >
+        {shape.shape}  
         </div>
-   );
-};
+    );
+}

@@ -3,7 +3,6 @@ import { DndContext } from "@dnd-kit/core";
 {/*needed for drag and drop area*/}
 import './App.css'
 import Quadrant from './components/Quadrant'
-import DraggableShape from './components/DraggableShape'
 
 {/*Array containing information about quadrants*/}
 const QUADRANTS = [
@@ -22,7 +21,7 @@ const INITIAL_SHAPES = [
   { id: "5", shape: "circle", quadrant: "TOP LEFT" },
 ];
 
-function App() {
+export default function App() {
   {/*setShapes is used to update shapes*/}
   const [shapes, setShapes] = useState(INITIAL_SHAPES);
   
@@ -61,5 +60,3 @@ function App() {
   );
 }
 
-
-export default App
