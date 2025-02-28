@@ -1,5 +1,6 @@
 import circle_icon from "../assets/circle_icon-removebg.png";
 
+// Circle shape component using image
 export function CircleShape() {
     return (
         <div className=" justify-center items-center ">
