@@ -1,4 +1,8 @@
 import { useDraggable } from "@dnd-kit/core";
+import { SqShape } from "./SquareShape";
+import { TriShape } from "./TriangleShape";
+import { CircleShape } from "./CircleShape";
+import { HexShape } from "./HexagonShape";
 
 
 export function DraggableShape({ shape }) {
@@ -11,6 +15,20 @@ export function DraggableShape({ shape }) {
         ? { transform: `translate(${transform.x}px, ${transform.y}px)` }
         : undefined;
 
+    const shapeImg = () => {
+        switch (shape.shape) {
+            case "circle":
+              return <CircleShape />;
+            case "hexagon":
+              return <HexShape />;
+            case "square":
+              return <SqShape />;
+            case "triangle":
+              return <TriShape />;
+            default:
+              return null;}
+    };
+
     return (
         <div
             ref={setNodeRef}
@@ -19,7 +37,7 @@ export function DraggableShape({ shape }) {
             className="cursor-grab"
             style={style}
         >
-        {shape.shape}  
+         {shapeImg()}   
         </div>
     );
 }
