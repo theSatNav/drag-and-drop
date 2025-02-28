@@ -38,7 +38,6 @@ export default function App() {
     }
 
     return (
-      
         <div className="grid grid-cols-2 bg-gray-700 h-dvh w-dvw">
             <DndContext onDragEnd={handleDragEnd}>
                 {QUADRANTS.map((quadrant) => (

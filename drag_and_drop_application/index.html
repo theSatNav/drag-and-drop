@@ -1,7 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- only allow https sites to add images in csp and disable inline scripts-->
+    <meta charset="UTF-8" 
+    
+    http-equiv="Content-Security-Policy" content="default-src 'self';
+    img-src data: https: http:;
+    script-src 'self';
+    style-src 'self' 'unsafe-inline'; "/>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
