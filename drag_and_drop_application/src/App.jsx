@@ -26,6 +26,21 @@ function App() {
   {/*setShapes is used to update shapes*/}
   const [shapes, setShapes] = useState(INITIAL_SHAPES);
   
+  function handleDragEnd(event) {
+    const { active, over } = event;
+
+    if (!over) return;
+
+    const shapeId = active.id; // ID of the dragged shape
+    const newQuadrant = over.id; // ID of the quadrant where it was dropped
+    
+    setShapes(() =>
+      shapes.map((shape) =>
+          shape.id === shapeId ? { ...shape, quadrant: newQuadrant } : shape
+      )
+  );
+  }
+
   return (
     <div className="grid grid-cols-2 bg-gray-700 h-dvh w-dvw">
     
