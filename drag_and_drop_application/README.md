@@ -8,7 +8,9 @@ then run:\
 `npm run dev`
 
 ## About Development
-Since I have minimal experience in React/JS most of this development journey was a learning curve but I am proud of what I have created. I spent a lot of time experimenting with the technologies to properly understand before creating my final project
+Since I have minimal experience in React/JS most of this development journey was a learning curve but I am proud of what I have created. I spent a lot of time experimenting with the technologies to properly understand before creating my final project.
+
+The responsiveness and understanding how `dnd-kit` worked was challenging since I was learning on the go but several tutorials were helpful. If I had more time to improve I would improve the colour scheme and intial size of shapes. In my opinion, this application looks better with a smaller screen size. However It is currently responsive and works on different screen sizes.
 
 ## Credits and References
 ### Shape images
