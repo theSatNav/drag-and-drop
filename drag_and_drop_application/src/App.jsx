@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import './App.css'
 import { DndContext } from "@dnd-kit/core"; //needed for drag and drop area
+import './App.css'
+import Quadrant from './components/Quadrant'
+import DraggableShape from './components/DraggableShape'
 
 //Array containing information about quadrants
 const QUADRANTS = [
@@ -22,11 +24,21 @@ const INITIAL_SHAPES = [
 function App() {
   //setShapes is used to update shapes
   const [shapes, setShapes] = useState(INITIAL_SHAPES);
+  
   return (
     //h-dvh and w-dvw give responsiveness
     <div className="grid grid-cols-2 bg-gray-700 h-dvh w-dvw">
-    <div>hi</div>
-    <div>Hello World!</div>
+    
+    //mapping quadrants on main page.
+    //each quadrant has 0.5 width height of the parent div
+    {QUADRANTS.map((quadrant) => (
+      <Quadrant
+      className="w-1/2 h-1/2"
+      key={quadrant.id}
+      quadrant={quadrant}
+      shapes={shapes.filter((shape) => shape.quadrant === quadrant.id)}
+      />
+    ))}
     </div>
   )
 }
